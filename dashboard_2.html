@@ -183,7 +183,7 @@
                             </div>
                             <div class="ibox-content">
                                 <div>
-                                    <div id="gauge"></div>
+                                    <div id="gauge1"></div>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +195,7 @@
                             </div>
                             <div class="ibox-content">
                                 <div>
-                                    <div id="gauge"></div>
+                                    <div id="gauge2"></div>
                                 </div>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="ibox-content">
                                 <div>
-                                    <div id="gauge"></div>
+                                    <div id="gauge3"></div>
                                 </div>
                             </div>
                         </div>
@@ -1175,14 +1175,18 @@
         <script src="js/plugins/c3/c3.min.js"></script>
 
    <script>
-    $(document).ready(function () {
-        // flot, vector map, sparkline, etc...
+$(document).ready(function () {
+    const gauges = [
+        { id: '#gauge1', value: 91.4 },
+        { id: '#gauge2', value: 85.2 },
+        { id: '#gauge3', value: 72.9 }
+    ];
 
-        // C3 gauge chart
+    gauges.forEach(g => {
         c3.generate({
-            bindto: '#gauge',
+            bindto: g.id,
             data: {
-                columns: [['data', 91.4]],
+                columns: [['data', g.value]],
                 type: 'gauge'
             },
             color: {
@@ -1190,6 +1194,10 @@
             }
         });
     });
+});
+
+
+       
 </script>
 </body>
 </html>
