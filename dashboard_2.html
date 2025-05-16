@@ -1180,19 +1180,22 @@
             <script src="js/plugins/d3/d3.min.js"></script>
         <script src="js/plugins/c3/c3.min.js"></script>
 
+   <script>
+    $(document).ready(function () {
+        // flot, vector map, sparkline, etc...
+
+        // C3 gauge chart
         c3.generate({
-                bindto: '#gauge',
-                data:{
-                    columns: [
-                        ['data', 91.4]
-                    ],
-
-                    type: 'gauge'
-                },
-                color:{
-                    pattern: ['#1ab394', '#BABABA']
-
-                }
-            });
+            bindto: '#gauge',
+            data: {
+                columns: [['data', 91.4]],
+                type: 'gauge'
+            },
+            color: {
+                pattern: ['#1ab394', '#BABABA']
+            }
+        });
+    });
+</script>
 </body>
 </html>
